@@ -14,16 +14,27 @@ Nevacoin will feature a number of innovative solutions devised to foster the gro
 SPECIFICATIONS
 --------------
 Type:                   PoW/Pos2.0 hybrid
+
 PoW algorithm:          Blake2s
+
 Difficulty retarget:    Every block
+
 Block time:             91 seconds
+
 Block reward:           5 NEVA  (both PoW and PoS have static rewards)
+
 Coinbase maturity:      25 blocks
+
 Block reward halving:   every 2628000 blocks
+
 Last PoW block:         5256000
+
 PoS start:              from the first block
+
 Minimum PoS age:        4 hours
+
 Maximum PoS age:        no max (PoS 2.0)
+
 Max coins:              26280000 NEVAs
 
 Network info:
