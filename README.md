@@ -26,23 +26,6 @@ Minimum PoS age:        4 hours
 Maximum PoS age:        no max (PoS 2.0)
 Max coins:              26280000 NEVAs
 
-Sum of the mining/staking schedule:
-Halvig phase   Block Reward        New coins created    Total coins created     Approx Time (years)
-0              5                   13140000             13140000                7
-1              2.5                 6570000              19710000                14  <--- END OF POW
-2              1.25                3285000              22995000                21
-3              0.625               1642500              24637500                28
-4              0.3125              821250               25458750                35
-5              0.15625             410625               25869375                42
-6              0.078125            205312.5             26074687.5              49
-7              0.0390625           102656.25            26177343.75             56
-8              0.01953125          51328.125            26228671.88             63
-9              0.009765625         25664.0625           26254335.94             70
-10             0.0048828125        12832.03125          26267167.97             77
-                 .                    .                      .
-                 .                    .                      .
-                 .                    .                      .
-
 Network info:
 
 P2P port: 7391
