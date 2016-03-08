@@ -53,15 +53,22 @@ inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MO
 /** Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp. */
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
-static const int64_t COIN_YEAR_REWARD = 1 * CENT; // 1% per year
-
 inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 0; }
 
 inline int64_t FutureDriftV1(int64_t nTime) { return nTime + 5 * 60; }
 inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 5 * 60; }
 inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV2(nHeight) ? FutureDriftV2(nTime) : FutureDriftV1(nTime); }
 
-inline unsigned int GetTargetSpacing(int nHeight) { return IsProtocolV2(nHeight) ? 60 : 60; }
+inline unsigned int GetTargetSpacing(int nHeight) {
+
+if (nHeight > 20000)   // increase block target at block height 15000
+
+  return IsProtocolV2(nHeight) ? 182 : 182;
+
+else
+
+  return IsProtocolV2(nHeight) ? 60 : 60;
+}
 
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
