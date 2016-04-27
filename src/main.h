@@ -982,10 +982,7 @@ public:
 
     int64_t GetPastTimeLimit() const
     {
-        if ((nHeight))
-            return GetBlockTime();
-        else
-            return GetMedianTimePast();
+        return GetBlockTime();
     }
 
     enum { nMedianTimeSpan=11 };
