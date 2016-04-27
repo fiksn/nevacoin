@@ -49,6 +49,8 @@ int nCoinbaseMaturity = 25;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 
+static const int64_t nTargetTimespan = 60 * 60;  // 60 mins
+
 uint256 nBestChainTrust = 0;
 uint256 nBestInvalidTrust = 0;
 
@@ -984,8 +986,6 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int nHeight)
 
     return nSubsidy + nFees;
 }
-
-static const int64_t nTargetTimespan = 20 * 60;  // 20 mins
 
 // ppcoin: find last block index up to pindex
 const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfStake)
