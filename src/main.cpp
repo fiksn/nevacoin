@@ -42,7 +42,6 @@ set<pair<COutPoint, unsigned int> > setStakeSeen;
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfStakeLimitV2(~uint256(0) >> 48);
 
-int nStakeMinConfirmations = 25;
 unsigned int nStakeMinAge = 4 * 60 * 60; // 4 hours
 unsigned int nModifierInterval = 5 * 60; // time to elapse before new modifier is computed
 
@@ -955,7 +954,7 @@ void static PruneOrphanBlocks()
 
 static CBigNum GetProofOfStakeLimit(int nHeight)
 {
-    if (IsProtocolV3(nHeight))
+    if (IsProtocolV2(nHeight))
         return bnProofOfStakeLimitV2;
     else
         return bnProofOfStakeLimit;
@@ -986,7 +985,7 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int nHeight)
     return nSubsidy + nFees;
 }
 
-static const int64_t nTargetTimespan = 60 * 60;  // 60 mins
+static const int64_t nTargetTimespan = 20 * 60;  // 20 mins
 
 // ppcoin: find last block index up to pindex
 const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfStake)
@@ -1806,7 +1805,7 @@ bool CTransaction::GetCoinAge(CTxDB& txdb, const CBlockIndex* pindexPrev, uint64
         // Read block header
         CBlock block;
         int nSpendDepth;
-             if (IsConfirmedInNPrevBlocks(txindex, pindexPrev, nStakeMinConfirmations - 1, nSpendDepth))
+             if (IsConfirmedInNPrevBlocks(txindex, pindexPrev, nCoinbaseMaturity - 1, nSpendDepth))
              {
                  LogPrint("coinage", "coin age skip nSpendDepth=%d\n", nSpendDepth + 1);
                  continue; // only count coins meeting min confirmations requirement
@@ -2385,7 +2384,6 @@ bool LoadBlockIndex(bool fAllowNew)
 
     if (TestNet())
     {
-        nStakeMinConfirmations = 10;
         nCoinbaseMaturity = 10; // test maturity is 10 blocks
     }
 
