@@ -55,7 +55,7 @@ static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20
 
 inline int64_t FutureDrift(int64_t nTime, int nHeight) { return nTime + 5 * 60; }
 
-inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 100000; }
+inline bool IsProtocolV3(int nHeight) { return TestNet() || nHeight > 100000; }
 
 inline unsigned int GetTargetSpacing(int nHeight) {return (nHeight > 20000) ? 182 : 60; }  // increase block target at block height 15000
 
