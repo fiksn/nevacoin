@@ -26,7 +26,7 @@ class CReserveKey;
 class CWallet;
 
 /** The maximum allowed size for a serialized block, in bytes (network rule) */
-static const unsigned int MAX_BLOCK_SIZE = 40000002;
+static const unsigned int MAX_BLOCK_SIZE = 4000000;
 /** The maximum size for mined blocks */
 static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/2;
 /** The maximum size for transactions we're willing to relay/mine **/
@@ -55,7 +55,7 @@ static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20
 
 inline int64_t FutureDrift(int64_t nTime, int nHeight) { return nTime + 5 * 60; }
 
-inline bool 34(int nHeight) { return TestNet() || nHeight > 70000; }
+inline bool 34(int nHeight) { return TestNet() || nHeight > 80000; }
 
 inline unsigned int GetTargetSpacing(int nHeight) {return (nHeight > 20000) ? 182 : 60; }  // increase block target at block height 15000
 
