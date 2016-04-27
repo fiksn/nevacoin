@@ -26,7 +26,7 @@ class CReserveKey;
 class CWallet;
 
 /** The maximum allowed size for a serialized block, in bytes (network rule) */
-static const unsigned int MAX_BLOCK_SIZE = 40000000;
+static const unsigned int MAX_BLOCK_SIZE = 40000002;
 /** The maximum size for mined blocks */
 static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/2;
 /** The maximum size for transactions we're willing to relay/mine **/
@@ -53,22 +53,11 @@ inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MO
 /** Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp. */
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
-inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 0; }
+inline int64_t FutureDrift(int64_t nTime, int nHeight) { return nTime + 5 * 60; }
 
-inline int64_t FutureDriftV1(int64_t nTime) { return nTime + 5 * 60; }
-inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 5 * 60; }
-inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV2(nHeight) ? FutureDriftV2(nTime) : FutureDriftV1(nTime); }
+inline bool 34(int nHeight) { return TestNet() || nHeight > 70000; }
 
-inline unsigned int GetTargetSpacing(int nHeight) {
-
-if (nHeight > 20000)   // increase block target at block height 15000
-
-  return IsProtocolV2(nHeight) ? 182 : 182;
-
-else
-
-  return IsProtocolV2(nHeight) ? 60 : 60;
-}
+inline unsigned int GetTargetSpacing(int nHeight) {return (nHeight > 20000) ? 182 : 60; }  // increase block target at block height 15000
 
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
@@ -656,17 +645,12 @@ public:
 
     uint256 GetHash() const
     {
-        return HashBlake2s(BEGIN(nVersion), END(nNonce));
-        /*if (nVersion > 6)
-            return Hash(BEGIN(nVersion), END(nNonce));
-        else
-            return GetPoWHash();*/
+    return GetPoWHash();
     }
 
     uint256 GetPoWHash() const
     {
-	return HashBlake2s(BEGIN(nVersion), END(nNonce));
-        //return scrypt_blockhash(CVOIDBEGIN(nVersion));
+	  return HashBlake2s(BEGIN(nVersion), END(nNonce));
     }
 
     int64_t GetBlockTime() const
@@ -998,7 +982,7 @@ public:
 
     int64_t GetPastTimeLimit() const
     {
-        if (IsProtocolV2(nHeight))
+        if (qa(nHeight))
             return GetBlockTime();
         else
             return GetMedianTimePast();
