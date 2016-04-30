@@ -98,6 +98,9 @@ double GetPoSKernelPS()
 
     double result = 0;
 
+    if (nStakesTime)
+        result = dStakeKernelsTriedAvg / nStakesTime;
+
     result *= STAKE_TIMESTAMP_MASK + 1;
 
     return result;
