@@ -958,6 +958,8 @@ static CBigNum GetProofOfStakeLimit(int nHeight)
 {
     if (IsProtocolV2(nHeight))
         return bnProofOfStakeLimitV2;
+    if (IsProtocolV3(nHeight))
+        return bnProofOfStakeLimit;
     else
         return bnProofOfStakeLimit;
 }
