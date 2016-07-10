@@ -956,10 +956,12 @@ void static PruneOrphanBlocks()
 
 static CBigNum GetProofOfStakeLimit(int nHeight)
 {
-    if (IsProtocolV2(nHeight))
-        return bnProofOfStakeLimitV2;
     if (IsProtocolV3(nHeight))
         return bnProofOfStakeLimit;
+
+    else if (IsProtocolV2(nHeight))
+         return bnProofOfStakeLimitV2;
+
     else
         return bnProofOfStakeLimit;
 }
