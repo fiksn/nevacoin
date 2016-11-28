@@ -84,12 +84,12 @@ public:
         assert(hashGenesisBlock == uint256("0x0000067865dd821b9f8b2dcdfb367c9d1344d3335fa6fc6d7940b026b88169a6"));
         assert(genesis.hashMerkleRoot == uint256("0x5783b7fc8f9fca30e77cf3333549ffed2f229a23fbbad4ab79cd2d3c15841af5"));
 
-        vSeeds.push_back(CDNSSeedData("nevacoin.pw", "seed1.nevacoin.pw"));
-        vSeeds.push_back(CDNSSeedData("nevacoin.pw", "seed2.nevacoin.pw"));
-        vSeeds.push_back(CDNSSeedData("nevacoin.pw", "seed3.nevacoin.pw"));
-        vSeeds.push_back(CDNSSeedData("nevacoin.pw", "seed4.nevacoin.pw"));
-        vSeeds.push_back(CDNSSeedData("crypto.si", "seed.crypto.si"));
-        vSeeds.push_back(CDNSSeedData("bit-coin.pw", "node.bit-coin.pw"));
+        vSeeds.push_back(CDNSSeedData("nevacoin.net", "n1.nevacoin.net"));
+        vSeeds.push_back(CDNSSeedData("nevacoin.net", "n2.nevacoin.net"));
+        vSeeds.push_back(CDNSSeedData("nevacoin.net", "n3.nevacoin.net"));
+        vSeeds.push_back(CDNSSeedData("nevacoin.net", "n4.nevacoin.net"));
+        vSeeds.push_back(CDNSSeedData("crypto.si", "seed.crypto.si")); //tnx to @staysecure, ARCO dev
+        vSeeds.push_back(CDNSSeedData("bit-coin.pw", "node.bit-coin.pw")); 
         vSeeds.push_back(CDNSSeedData("bit-coin.pw", "krile.bit-coin.pw"));
         vSeeds.push_back(CDNSSeedData("chainworksindustries.com", "neva-seed01.chainworksindustries.com"));
         vSeeds.push_back(CDNSSeedData("chainworksindustries.com", "neva-seed02.chainworksindustries.com"));
