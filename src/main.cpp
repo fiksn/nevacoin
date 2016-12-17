@@ -2000,8 +2000,16 @@ bool CBlock::AcceptBlock()
         return DoS(100, error("AcceptBlock() : reject proof-of-work at height %d", nHeight));
 
     // Check coinbase timestamp
-    if (GetBlockTime() > FutureDrift((int64_t)vtx[0].nTime, nHeight))
-        return DoS(50, error("AcceptBlock() : coinbase timestamp is too early"));
+    if(IsProtocolV4(nHeight))
+          {
+            if (GetBlockTime() > FutureDriftV4((int64_t)vtx[0].nTime, nHeight))
+                return DoS(50, error("AcceptBlock() : coinbase timestamp is too early"));
+          }
+    else
+          {
+            if (GetBlockTime() > FutureDrift((int64_t)vtx[0].nTime, nHeight))
+                return DoS(50, error("AcceptBlock() : coinbase timestamp is too early"));
+          }
 
     // Check coinstake timestamp
     if (IsProofOfStake() && !CheckCoinStakeTimestamp(nHeight, GetBlockTime(), (int64_t)vtx[1].nTime))
