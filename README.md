@@ -44,3 +44,14 @@ RPC port: 3791
 
 Testnet P2P port: 17391
 Testnet RPC port: 13791
+
+Website: https://nevacoin.net
+
+Forum: https://bitcointalk.org/index.php?topic=1388222
+
+Facebook: https://www.facebook.com/nevacoin/
+
+Twitter: https://twitter.com/nevacoin
+
+Telegram: https://t.me/neva_coin
+
