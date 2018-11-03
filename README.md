@@ -55,3 +55,5 @@ Twitter: https://twitter.com/nevacoin
 
 Telegram: https://t.me/neva_coin
 
+Reddit: https://www.reddit.com/r/BlockmasterSi
+
