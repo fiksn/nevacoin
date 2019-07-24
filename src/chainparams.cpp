@@ -150,8 +150,8 @@ public:
         assert(hashGenesisBlock == uint256("0x005a03c21a8fd3cec753cd5d8bcb0b8b18071ee65f8c77af13e671c1bce771f4"));
 
         vFixedSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("nevacoin.pw", "test1.nevacoin.pw"));
-        vSeeds.push_back(CDNSSeedData("nevacoin.pw", "test2.nevacoin.pw"));
+        vSeeds.push_back(CDNSSeedData("nevacoin.net", "test1.nevacoin.net"));
+        vSeeds.push_back(CDNSSeedData("nevacoin.net", "test2.nevacoin.net"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
