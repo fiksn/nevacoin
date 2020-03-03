@@ -45,6 +45,14 @@ RPC port: 3791
 Testnet P2P port: 17391
 Testnet RPC port: 13791
 
+NevaCoin blockchain snapshots/chain states/bootstrap.dat (pCloud: http://pc.cd/jjo )
+
+Responsible disclosure and security contact: security@nevacoin.net
+
+Exchanges and listing contact (digital currency exchange representatives should take note Neva is an open source network with no premine/instamine or any type of crowdfunding and no listing fee budget is awailable): listings@nevacoin.net
+
+Developers contact: dev@nevacoin.net
+
 Website: https://nevacoin.net
 
 Forum: https://bitcointalk.org/index.php?topic=1388222
