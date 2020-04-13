@@ -67,7 +67,6 @@ Reddit: https://www.reddit.com/r/BlockmasterSi
 
 ## Support development 
 
-
 - Bitcoin (BTC): 3Dho3s7SchiGuq27r37ZLodf8CSba7tX1d
 - Dynamic Trading Rights (DTR) : 0x1823FfcE4C3B78F9641202cC3996bF717B483F1d
 - Ethereum (ETH): 0x1823FfcE4C3B78F9641202cC3996bF717B483F1d
